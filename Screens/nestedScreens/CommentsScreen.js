@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-const MapScreen = () => {
+const CommentsScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text>Map Screen</Text>
+      <Text>Comments Screen</Text>
     </View>
   );
 };
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MapScreen;
+export default CommentsScreen;

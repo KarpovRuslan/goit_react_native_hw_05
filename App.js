@@ -13,7 +13,6 @@ export default function App() {
   return (
     <NavigationContainer>
       <View style={styles.container}>
-        {/* <ImageBackground source={imageBack} style={styles.image}> */}
         <MainScreen.Navigator initialRouteName="Login">
           <MainScreen.Screen
             name="Registration"
@@ -31,7 +30,6 @@ export default function App() {
             options={{ headerShown: false }}
           />
         </MainScreen.Navigator>
-        {/* </ImageBackground> */}
       </View>
     </NavigationContainer>
   );

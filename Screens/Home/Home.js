@@ -7,6 +7,7 @@ import PostsScreen from "../PostsScreen/PostsScreen";
 import ProfileScreen from "../ProfileScreen/ProfileScreen";
 import { Feather } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
+import DefaultScreen from "../nestedScreens/DefaultScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -14,7 +15,7 @@ export const Home = ({ navigation }) => {
   return (
     <Tab.Navigator>
       <Tab.Screen
-        name="PostsScreen"
+        name="Posts"
         component={PostsScreen}
         options={{
           tabBarShowLabel: false,
@@ -40,12 +41,12 @@ export const Home = ({ navigation }) => {
         component={CreatePostsScreen}
         options={{
           tabBarShowLabel: false,
-          tabBarStyle: { height: 83, paddingBottom: 10, borderTopWidth: 1 },
+          tabBarStyle: { display: "none" },
           headerLeft: () => {
             const navigation = useNavigation();
             return (
               <TouchableOpacity
-                onPress={() => navigation.navigate("PostsScreen")}
+                onPress={() => navigation.navigate("DefaultScreen")}
                 activeOpacity={0.6}
                 style={{ paddingLeft: 16 }}
               >
@@ -65,6 +66,7 @@ export const Home = ({ navigation }) => {
         component={ProfileScreen}
         options={{
           tabBarShowLabel: false,
+          tabBarIconStyle: { marginRight: 45 },
           tabBarStyle: { height: 83, paddingBottom: 10, borderTopWidth: 1 },
           tabBarIcon: ({ focused, size, color }) => (
             <Feather name="user" size={size} color={color} />
@@ -74,19 +76,6 @@ export const Home = ({ navigation }) => {
     </Tab.Navigator>
   );
 };
-
-// const useRoute = (isAuth) => {
-//   if (!isAuth) {
-//     return (
-
-//     );
-//   }
-// };
-
-// const Home = ({ navigation }) => {
-//   const routing = useRoute();
-//   return <>{routing}</>;
-// };
 
 const styles = StyleSheet.create({
   container: {
